@@ -54,10 +54,11 @@ $ sudo chown homeassistant:homeassistant /srv/homeassistant
 This is obviously only necessary if you created a `homeassistant` user, but if you did, be sure to switch to that user whenever you install things in your virtualenv, otherwise you'll end up with mucked up permissions.
 
 ```bash
-$ sudo su -s /bin/bash homeassistant
+$ sudo su - -s /bin/bash homeassistant
 ```
 
 The `su` command means 'switch' user. We use the '-s' flag because the `homeassistant` user is a system user and doesn't have a default shell by default (to prevent attackers from being able to log in as that user).
+The single '-' puts you in the homedirectory of homeassistant. See: http://manpages.ubuntu.com/manpages/xenial/en/man1/su.1.html
 
 ### {% linkable_title Step 4: Set up the virtualenv %}
 
